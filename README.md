@@ -12,7 +12,7 @@ Dự án **Exam Management System** là một hệ thống quản lý thi trực
 ## Yêu cầu hệ thống
 - Python 3.8+
 - Flask
-- SQLite (hoặc MySQL nếu muốn mở rộng)
+- SQLite
 - Các thư viện cần thiết (liệt kê trong `requirements.txt`)
 
 ## Hướng dẫn cài đặt
@@ -65,13 +65,3 @@ Dự án **Exam Management System** là một hệ thống quản lý thi trực
 ### Xem kết quả
 - Giáo viên có thể vào mục **Quản lý kết quả** để xem và xuất kết quả của từng học sinh.
 - Học sinh có thể xem lại điểm và bài làm của mình tại mục **Kết quả cá nhân**.
-
-## Đóng góp
-Nếu bạn muốn đóng góp cho dự án, hãy fork repo và tạo pull request. Mọi ý kiến đóng góp và đề xuất cải tiến đều được hoan nghênh!
-
-## Liên hệ
-- Email: contact@example.com
-- GitHub: [https://github.com/username/Exam-Management](https://github.com/username/Exam-Management)
-```
-
-Bạn có thể thay thế các thông tin như email và đường dẫn GitHub theo nhu cầu của mình.
