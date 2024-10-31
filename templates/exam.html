@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exam</h1>
+        <form action="/submit_exam" method="POST">
+            {% for question in questions %}
+            <div class="question">
+                <p><strong>Question {{ loop.index }}:</strong> {{ question.question_text }}</p>
+                {% for choices in question.choices.split(',') %}
+                <label>
+                    <input type="radio" name="question_{{ loop.index }}" value="{{ choices }}">
+                    {{ choices }}
+                </label><br>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="submit-btn">Submit Exam</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách câu hỏi</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Danh sách câu hỏi</h1>
+    <form action="{{ url_for('view_questions') }}" method="GET">
+        <label for="difficulty_level">Tìm kiếm theo mức độ khó:</label>
+        <select name="difficulty_level" id="difficulty_level">
+            <option value="">--Chọn mức độ--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <button type="submit">Tìm kiếm</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nội dung câu hỏi</th>
+                <th>Các lựa chọn</th>
+                <th>Đáp án đúng</th>
+                <th>Mức độ khó</th>
+                <th>Danh mục</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in questions %}
+            <tr>
+                <td>{{ question.question_text }}</td>
+                <td>{{ question.choices }}</td>
+                <td>{{ question.correct_answer }}</td>
+                <td>{{ question.difficulty_level }}</td>
+                <td>{{ question.category }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5">Không tìm thấy câu hỏi nào</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

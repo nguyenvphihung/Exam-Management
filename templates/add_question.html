@@ -1,0 +1,15 @@
+<body>
+    <form method="POST">
+        <label for="question_text">Nội dung câu hỏi</label>
+        <textarea id="question_text" name="question_text" required></textarea>
+        <label for="choices">Các lựa chọn (ngăn cách bằng dấu phẩy)</label>
+        <textarea id="choices" name="choices" required></textarea>
+        <label for="correct_answer">Đáp án đúng</label>
+        <input type="text" id="correct_answer" name="correct_answer" required>
+        <label for="difficulty_level">Mức độ khó</label>
+        <input type="number" id="difficulty_level" name="difficulty_level" required>
+        <label for="category">Danh mục</label>
+        <input type="text" id="category" name="category" required>
+        <button type="submit">Thêm câu hỏi</button>
+    </form>
+</body>
